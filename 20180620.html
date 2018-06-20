@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Andy Cyca" />
+  <meta name="date" content="2018-06-20" />
+  <title>Solucionario a un examen dado</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Solucionario a un examen dado</h1>
+<h2 class="author">Andy Cyca</h2>
+<h3 class="date">2018-06-20</h3>
+</div>
+<h1 id="problema-ejemplo">Problema ejemplo</h1>
+<p>La suma de los cuadrados de los primeros diez números naturales es: <br /><span class="math">1<sup>2</sup> + 2<sup>2</sup> + … + 10<sup>2</sup> = 385</span><br /> El cuadrado de la suma de los primeros diez números naturales es: <br /><span class="math">(1 + 2 + … + 10)<sup>2</sup> = 552 = 3025</span><br /> Por lo tanto, la diferencia entre la suma de los cuadrados de los primeros diez números naturales y el cuadrado de la suma es <span class="math">3025 − 385 = 2640</span></p>
+<p>Encuentre la diferencia entre la suma de los cuadrados de los primeros cien números naturales y el cuadrado de la suma</p>
+<h2 id="explicación" class="unnumbered">Explicación</h2>
+<p>El problema requiere encontrar la diferencia de dos números. El primero es la suma de los cuadrados:</p>
+<p><br /><span class="math"><em>a</em> = 1<sup>2</sup> + 2<sup>2</sup> + … + 100<sup>2</sup></span><br /></p>
+<p>El segundo es el cuadrado de la suma:</p>
+<p><br /><span class="math"><em>b</em> = (1 + 2 + 3 + … + 100)<sup>2</sup></span><br /></p>
+<p>Se crearán dos variables inicializadas en cero, <span class="math"><em>a</em></span> y <span class="math"><em>b</em></span>. Se creará una iteración de cien ciclos. En cada ciclo, se sumarán a <span class="math"><em>a</em></span> los valores de los números al cuadrado y se sumarán a <span class="math"><em>b</em></span> los números mismos. Al final, se encontrará <span class="math"><em>b</em><sup>2</sup></span> y se hará la resta <span class="math"><em>a</em> − <em>b</em></span></p>
+<h2 id="respuesta" class="unnumbered">Respuesta</h2>
+<p><strong>25164150</strong></p>
+<h2 id="código-ejemplo" class="unnumbered">Código ejemplo</h2>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Definimos dos sumas que serán comparadas después. Una es para</span>
+<span class="co"># la suma de los cuadrados y otra para el cuadrado de la suma.</span>
+<span class="co"># ambas son inicializadas en 0</span>
+sum_1 = sum_2 = <span class="dv">0</span>
+
+<span class="co"># Ciclamos por todos los números menores a 101</span>
+<span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">101</span>):
+    sum_1 += i**<span class="dv">2</span> <span class="co"># añadimos el cuadrado a la primera suma</span>
+    sum_2 += i    <span class="co"># y el número mismo a la segunda</span>
+
+<span class="co"># Ahora encontramos la diferencia entre el primero y el cuadrado</span>
+<span class="co"># del segundo</span>
+<span class="dt">print</span>(<span class="dt">abs</span>(sum_1 - (sum_2**<span class="dv">2</span>)))</code></pre>
+<hr />
+<p><a href="index.html">Index</a></p>
+</body>
+</html>
