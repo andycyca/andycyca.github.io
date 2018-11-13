@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Andy Cyca" />
+  <meta name="date" content="2018-11-13" />
+  <title>Definiciones básicas y más estado del arte</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  { color: #cccccc; background-color: #303030; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ffcfaf; } /* Alert */
+code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #dca3a3; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #f0dfaf; } /* ControlFlow */
+code span.ch { color: #dca3a3; } /* Char */
+code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code span.co { color: #7f9f7f; } /* Comment */
+code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code span.do { color: #7f9f7f; } /* Documentation */
+code span.dt { color: #dfdfbf; } /* DataType */
+code span.dv { color: #dcdccc; } /* DecVal */
+code span.er { color: #c3bf9f; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #c0bed1; } /* Float */
+code span.fu { color: #efef8f; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+code span.kw { color: #f0dfaf; } /* Keyword */
+code span.op { color: #f0efd0; } /* Operator */
+code span.ot { color: #efef8f; } /* Other */
+code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code span.sc { color: #dca3a3; } /* SpecialChar */
+code span.ss { color: #cc9393; } /* SpecialString */
+code span.st { color: #cc9393; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #cc9393; } /* VerbatimString */
+code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="template.css" />
+</head>
+<body>
+    <div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <span class="doc-title">Definiciones básicas y más estado del arte</span>
+        <ul class="nav pull-right doc-info">
+                    <li><p class="navbar-text">Andy Cyca</p></li>
+                              <li><p class="navbar-text">2018-11-13</p></li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+    <div class="row">
+            <div id="TOC" class="span3">
+        <div class="well toc">
+        <ul>
+          <li class="nav-header">Contenidos</li>
+        </ul>
+        <ul>
+        <li><a href="#definiciones">Definiciones</a><ul>
+        <li><a href="#redes-convolucionales">Redes convolucionales</a></li>
+        <li><a href="#stochastic-gradient-descent">Stochastic Gradient Descent</a></li>
+        <li><a href="#stochastic-approximation">Stochastic approximation</a></li>
+        <li><a href="#gradient-descent">Gradient descent</a></li>
+        </ul></li>
+        <li><a href="#estado-del-arte">Estado del arte</a><ul>
+        <li><a href="#comparación-de-fcn-rf-svm-dcnn-para-mapeo-de-humedales-basado-en-objetos">Comparación de FCN, RF, SVM, DCNN para mapeo de humedales basado en objetos</a></li>
+        <li><a href="#evaluación-de-extracción-de-datos-multi-vista-de-uas">Evaluación de extracción de datos multi-vista de UAS</a></li>
+        <li><a href="#un-tutorial-técnico-del-estado-del-arte-2016">Un tutorial técnico del estado del arte (2016)</a></li>
+        <li><a href="#transferencia-de-pre-entrenamiento">Transferencia de pre-entrenamiento</a></li>
+        <li><a href="#algoritmo-de-pre-entrenamiento">Algoritmo de pre-entrenamiento</a></li>
+        </ul></li>
+        <li><a href="#otros-materiales-aún-sin-revisar">Otros materiales aún sin revisar</a></li>
+        <li><a href="#referencias">Referencias</a></li>
+        </ul>
+        </div>
+      </div>
+            <div class="span9">
+            <h1 id="definiciones">Definiciones</h1>
+<h2 id="redes-convolucionales">Redes convolucionales</h2>
+<p>De acuerdo con <span class="citation" data-cites="LeCun2015">LeCun, Bengio, y Hinton (<a href="#ref-LeCun2015">2015</a>, 439)</span>:</p>
+<blockquote>
+<p>La arquitectura de una ConvNet típica está estructurada como una serie de niveles. Los primeros niveles están compuestos por dos tipos de capas: capas convolucionales y capas “pooling”.</p>
+</blockquote>
+<p>El papel de una capa convlucional es la detección de conjuntos locales de <em>features</em>, mientras que el papel de una capa <em>pooling</em><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> es de agrupar <em>features</em> semánticamente similares en uno solo.</p>
+<p>Continúa la explicación:</p>
+<blockquote>
+<p>Las redes neuranales profundas explotan la propiedad de que muchas señales naturales son herarquías de composición, en la que las características de alto nivel se obtienen mediante la composición de caracterísiticas en niveles menores. En las imágenes, las combinaciones locales de bordes forman motivos, los motivos se ensamblan en partes y las partes forman objetos… El agrupamiento perminte que las representaciones varíen muy poco cuando los elementos en la capa anterior varían en posición y apariencia.</p>
+</blockquote>
+<h2 id="stochastic-gradient-descent">Stochastic Gradient Descent</h2>
+<p><a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent">Wikipedia</a> sez: &gt; Stochastic gradient descent (often shortened to SGD), also known as <strong>incremental gradient descent</strong>, is an iterative method for optimizing a differentiable objective function, a stochastic approximation of gradient descent optimization.</p>
+<h2 id="stochastic-approximation">Stochastic approximation</h2>
+<p><a href="https://en.wikipedia.org/wiki/Stochastic_approximation">Wikipedia</a> sez:</p>
+<blockquote>
+<p>Stochastic approximation algorithms are recursive update rules that can be used, among other things, to solve optimization problems and fixed point equations (including standard linear systems) when the collected data is subject to noise.</p>
+<p>For this purpose, you can do experiments or run simulations to evaluate the performance of the system at given values of the parameters.</p>
+<p>Stochastic approximation methods are a family of iterative stochastic optimization algorithms that attempt to find zeroes or extrema of functions which cannot be computed directly, but only estimated via noisy observations.</p>
+</blockquote>
+<h2 id="gradient-descent">Gradient descent</h2>
+<p><a href="">Wikipedia</a> sez:</p>
+<blockquote>
+<p>Gradient descent is a first-order iterative optimization algorithm for finding the minimum of a function. To find a local minimum of a function using gradient descent, one takes steps proportional to the negative of the gradient (or approximate gradient) of the function at the current point. If, instead, one takes steps proportional to the positive of the gradient, one approaches a local maximum of that function; the procedure is then known as gradient ascent.</p>
+</blockquote>
+<p>Also from Wikipedia, a small implementation in Python</p>
+<div class="sourceCode" id="wikipedia-implementation"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="wikipedia-implementation-1" title="1"><span class="co"># From calculation, it is expected that the local minimum occurs at x=9/4</span></a>
+<a class="sourceLine" id="wikipedia-implementation-2" title="2"></a>
+<a class="sourceLine" id="wikipedia-implementation-3" title="3">cur_x <span class="op">=</span> <span class="dv">6</span> <span class="co"># The algorithm starts at x=6</span></a>
+<a class="sourceLine" id="wikipedia-implementation-4" title="4">gamma <span class="op">=</span> <span class="fl">0.01</span> <span class="co"># step size multiplier</span></a>
+<a class="sourceLine" id="wikipedia-implementation-5" title="5">precision <span class="op">=</span> <span class="fl">0.00001</span></a>
+<a class="sourceLine" id="wikipedia-implementation-6" title="6">previous_step_size <span class="op">=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="wikipedia-implementation-7" title="7">max_iters <span class="op">=</span> <span class="dv">10000</span> <span class="co"># maximum number of iterations</span></a>
+<a class="sourceLine" id="wikipedia-implementation-8" title="8">iters <span class="op">=</span> <span class="dv">0</span> <span class="co">#iteration counter</span></a>
+<a class="sourceLine" id="wikipedia-implementation-9" title="9"></a>
+<a class="sourceLine" id="wikipedia-implementation-10" title="10">df <span class="op">=</span> <span class="kw">lambda</span> x: <span class="dv">4</span> <span class="op">*</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">9</span> <span class="op">*</span> x<span class="op">**</span><span class="dv">2</span></a>
+<a class="sourceLine" id="wikipedia-implementation-11" title="11"></a>
+<a class="sourceLine" id="wikipedia-implementation-12" title="12"><span class="cf">while</span> previous_step_size <span class="op">&gt;</span> precision <span class="kw">and</span> iters <span class="op">&lt;</span> max_iters:</a>
+<a class="sourceLine" id="wikipedia-implementation-13" title="13">    prev_x <span class="op">=</span> cur_x</a>
+<a class="sourceLine" id="wikipedia-implementation-14" title="14">    cur_x <span class="op">-=</span> gamma <span class="op">*</span> df(prev_x)</a>
+<a class="sourceLine" id="wikipedia-implementation-15" title="15">    previous_step_size <span class="op">=</span> <span class="bu">abs</span>(cur_x <span class="op">-</span> prev_x)</a>
+<a class="sourceLine" id="wikipedia-implementation-16" title="16">    iters<span class="op">+=</span><span class="dv">1</span></a>
+<a class="sourceLine" id="wikipedia-implementation-17" title="17"></a>
+<a class="sourceLine" id="wikipedia-implementation-18" title="18"><span class="bu">print</span>(<span class="st">&quot;The local minimum occurs at&quot;</span>, cur_x)</a>
+<a class="sourceLine" id="wikipedia-implementation-19" title="19"><span class="co">#The output for the above will be: (&#39;The local minimum occurs at&#39;, 2.2499646074278457)</span></a></code></pre></div>
+<h1 id="estado-del-arte">Estado del arte</h1>
+<h2 id="comparación-de-fcn-rf-svm-dcnn-para-mapeo-de-humedales-basado-en-objetos">Comparación de FCN, RF, SVM, DCNN para mapeo de humedales basado en objetos</h2>
+<p>En “Comparing fully convolutional networks, random forest, support vector machine, and patch-based deep convolutional neural networks for object-based wetland mapping using images from small unmanned aircraft system” <span class="citation" data-cites="Liu2018a">(Liu, Abd-Elrahman, Morton, et al. <a href="#ref-Liu2018a">2018</a>)</span></p>
+<blockquote>
+<p>In this study, two representatives of deep learning networks including fully convolutional networks (FCN) and patch-based deep convolutional neural networks (DCNN), and two conventional classifiers including random forest and support vector machine were implemented within the framework of OBIA to classify seven natural land cover types.</p>
+<p>Our results indicate that DCNN may produce inferior performance compared to conventional classifiers when the training sample size is small, but it tends to show substantially higher accuracy than the conventional classifiers when the training sample size becomes large.</p>
+</blockquote>
+<h2 id="evaluación-de-extracción-de-datos-multi-vista-de-uas">Evaluación de extracción de datos multi-vista de UAS</h2>
+<p>En “Evaluating the potential of multi-view data extraction from small Unmanned Aerial Systems (UASs) for object-based classification for Wetland land covers” <span class="citation" data-cites="Liu2018b">(Liu, Abd-Elrahman, Dewitt, et al. <a href="#ref-Liu2018b">2018</a>)</span></p>
+<blockquote>
+<p>This study presents a method that combines collinearity equations and a two-phase optimization procedure to automatically project a point from real world coordinate system of an orthoimage to UAS image coordinate system (row and column numbers) to be used in multi-view data extraction. The results show average errors for the computed UAS column and row numbers were 1.6 and 1.8 pixels respectively evaluated with leave-one-out method.</p>
+</blockquote>
+<h2 id="un-tutorial-técnico-del-estado-del-arte-2016">Un tutorial técnico del estado del arte (2016)</h2>
+<p>En “Deep Learning for Remote Sensing Data: A Technical Tutorial on the State of the Art”<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> <span class="citation" data-cites="Zhang2016">(Zhang, Zhang, y Du <a href="#ref-Zhang2016">2016</a>)</span></p>
+<h2 id="transferencia-de-pre-entrenamiento">Transferencia de pre-entrenamiento</h2>
+<p>En “Transferring Deep Convolutional Neural Networks for the Scene Classification of High-Resolution Remote Sensing Imagery” <span class="citation" data-cites="Hu2015">(Hu et al. <a href="#ref-Hu2015">2015</a>)</span></p>
+<blockquote>
+<p>In this paper, we investigate how to transfer features from these successfully pre-trained CNNs for HRRS scene classification.</p>
+<p>The results reveal that the features from pre-trained CNNs generalize well to HRRS datasets and are more expressive than the low- and mid-level features. Moreover, we tentatively combine features extracted from different CNN models for better performance.</p>
+</blockquote>
+<h2 id="algoritmo-de-pre-entrenamiento">Algoritmo de pre-entrenamiento</h2>
+<p>En “Unsupervised Deep Feature Extraction for Remote Sensing Image Classification”<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> <span class="citation" data-cites="Romero2016">(Romero, Gatta, y Camps-Valls <a href="#ref-Romero2016">2016</a>)</span></p>
+<blockquote>
+<p>we propose the use of greedy layerwise unsupervised pretraining coupled with a highly efficient algorithm for unsupervised learning of sparse features.</p>
+<p>The proposed algorithm clearly outperforms standard principal component analysis (PCA) and its kernel counterpart (kPCA), as well as current state-of-the-art algorithms of aerial classification, while being extremely computationally efficient at learning representations of data. Results show that single-layer convolutional networks can extract powerful discriminative features only when the receptive field accounts for neighboring pixels and are preferred when the classification requires high resolution and detailed results. However, deep architectures significantly outperform single-layer variants, capturing increasing levels of abstraction and complexity throughout the feature hierarchy.</p>
+</blockquote>
+<h1 id="otros-materiales-aún-sin-revisar">Otros materiales aún sin revisar</h1>
+<ul>
+<li><span class="citation" data-cites="Chen2014">Chen et al. (<a href="#ref-Chen2014">2014</a>)</span></li>
+<li><span class="citation" data-cites="Hinton2006">Hinton, Osindero, y Teh (<a href="#ref-Hinton2006">2006</a>)</span></li>
+<li><span class="citation" data-cites="Kussul2017">Kussul et al. (<a href="#ref-Kussul2017">2017</a>)</span></li>
+</ul>
+<hr />
+<p><a href="index.html">Back to Index</a></p>
+<hr />
+<h1 id="referencias" class="unnumbered">Referencias</h1>
+<div id="refs" class="references">
+<div id="ref-Chen2014">
+<p>Chen, Yushi, Zhouhan Lin, Xing Zhao, Gang Wang, y Yanfeng Gu. 2014. «Deep Learning-Based Classification of Hyperspectral Data». <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em> 7 (6): 2094-2107. <a href="https://doi.org/10.1109/jstars.2014.2329330">https://doi.org/10.1109/jstars.2014.2329330</a>.</p>
+</div>
+<div id="ref-Hinton2006">
+<p>Hinton, Geoffrey E., Simon Osindero, y Yee-Whye Teh. 2006. «A Fast Learning Algorithm for Deep Belief Nets». <em>Neural Computation</em> 18 (7): 1527-54. <a href="https://doi.org/10.1162/neco.2006.18.7.1527">https://doi.org/10.1162/neco.2006.18.7.1527</a>.</p>
+</div>
+<div id="ref-Hu2015">
+<p>Hu, Fan, Gui-Song Xia, Jingwen Hu, y Liangpei Zhang. 2015. «Transferring Deep Convolutional Neural Networks for the Scene Classification of High-Resolution Remote Sensing Imagery». <em>Remote Sensing</em> 7 (11): 14680-14707. <a href="https://doi.org/10.3390/rs71114680">https://doi.org/10.3390/rs71114680</a>.</p>
+</div>
+<div id="ref-Kussul2017">
+<p>Kussul, Nataliia, Mykola Lavreniuk, Sergii Skakun, y Andrii Shelestov. 2017. «Deep Learning Classification of Land Cover and Crop Types Using Remote Sensing Data». <em>IEEE Geoscience and Remote Sensing Letters</em> 14 (5): 778-82. <a href="https://doi.org/10.1109/lgrs.2017.2681128">https://doi.org/10.1109/lgrs.2017.2681128</a>.</p>
+</div>
+<div id="ref-LeCun2015">
+<p>LeCun, Yann, Yoshua Bengio, y Geoffrey Hinton. 2015. «Deep learning». <em>Nature</em> 521 (7553): 436-44. <a href="https://doi.org/10.1038/nature14539">https://doi.org/10.1038/nature14539</a>.</p>
+</div>
+<div id="ref-Liu2018b">
+<p>Liu, Tao, Amr Abd-Elrahman, Bon Dewitt, Scot Smith, Jon Morton, y Victor L. Wilhelm. 2018. «Evaluating the potential of multi-view data extraction from small Unmanned Aerial Systems (UASs) for object-based classification for Wetland land covers». <em>GIScience &amp; Remote Sensing</em>, julio, 1-30. <a href="https://doi.org/10.1080/15481603.2018.1495395">https://doi.org/10.1080/15481603.2018.1495395</a>.</p>
+</div>
+<div id="ref-Liu2018a">
+<p>Liu, Tao, Amr Abd-Elrahman, Jon Morton, y Victor L. Wilhelm. 2018. «Comparing fully convolutional networks, random forest, support vector machine, and patch-based deep convolutional neural networks for object-based wetland mapping using images from small unmanned aircraft system». <em>GIScience &amp; Remote Sensing</em> 55 (2): 243-64. <a href="https://doi.org/10.1080/15481603.2018.1426091">https://doi.org/10.1080/15481603.2018.1426091</a>.</p>
+</div>
+<div id="ref-Romero2016">
+<p>Romero, Adriana, Carlo Gatta, y Gustau Camps-Valls. 2016. «Unsupervised Deep Feature Extraction for Remote Sensing Image Classification». <em>IEEE Transactions on Geoscience and Remote Sensing</em> 54 (3): 1349-62. <a href="https://doi.org/10.1109/tgrs.2015.2478379">https://doi.org/10.1109/tgrs.2015.2478379</a>.</p>
+</div>
+<div id="ref-Zhang2016">
+<p>Zhang, Liangpei, Lefei Zhang, y Bo Du. 2016. «Deep Learning for Remote Sensing Data: A Technical Tutorial on the State of the Art». <em>IEEE Geoscience and Remote Sensing Magazine</em> 4 (2): 22-40. <a href="https://doi.org/10.1109/mgrs.2016.2540798">https://doi.org/10.1109/mgrs.2016.2540798</a>.</p>
+</div>
+</div>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>¿Sería apropiado llamarla “capa de agrupamiento”? Según el artículo de LeCun, podría serlo -A.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Aún me falta conseguir el PDF -A.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>También aquí me falta el PDF -A.<a href="#fnref3" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+            </div>
+    </div>
+  </div>
+</body>
+</html>
