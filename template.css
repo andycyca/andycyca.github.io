@@ -215,6 +215,7 @@ body {
   line-height: 20px;
   color: #333333;
   background-color: #ffffff;
+  text-align: justify; /*was empty*/
 }
 a {
   color: #0088cc;
@@ -3053,3 +3054,5 @@ h4:hover a { color: #333; } h5:hover a { color: #333; } h6:hover a { color: #333
 .toc ul { margin-bottom: 0; }
 .toc ul > li > a, .toc ul > li > a { padding: 3px 15px; }
 .blockquote p{font-size: 80%; background-color: #900;}
+.smallcaps {font-variant: small-caps; font-weight: bold;}
+.epigraph {font-variant: small-caps; color: #E6E8E6; background-color:#0E0004; border: 5px solid #F15025; border-radius: 10px; text-align: center; padding: 5px;}

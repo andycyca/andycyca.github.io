@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es-MX" xml:lang="es-MX">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Andy Cyca" />
+  <meta name="date" content="2018-11-14" />
+  <title>Un poco de justificación e historia (borrador)</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="template.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+    <div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <span class="doc-title">Un poco de justificación e historia (borrador)</span>
+        <ul class="nav pull-right doc-info">
+                    <li><p class="navbar-text">Andy Cyca</p></li>
+                              <li><p class="navbar-text">2018-11-14</p></li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+    <div class="row">
+            <div id="TOC" class="span3">
+        <div class="well toc">
+        <ul>
+          <li class="nav-header">Contenidos</li>
+        </ul>
+        <ul>
+        <li><a href="#a-forma-de-justificación">A forma de justificación</a></li>
+        <li><a href="#idea-básica-de-una-neurona">Idea básica de una neurona</a></li>
+        <li><a href="#referencias">Referencias</a></li>
+        </ul>
+        </div>
+      </div>
+            <div class="span9">
+            <p><span class="epigraph"><a href="https://es.wikipedia.org/wiki/Fernando_del_Paso">Fernando del Paso</a>: 1 de abril de 1935–14 de noviembre de 2018</span></p>
+<h1 id="a-forma-de-justificación">A forma de justificación</h1>
+<!--Para la introducción, quizá -->
+<p>El campo de la <span class="smallcaps">Inteligencia Artificial</span> (<strong>IA</strong>) ha logrado, desde sus inicios, resultados no sólo prometedores y soluciones concretas a múltiples problemas incluyendo, pero no limitado al apoyo en diagnósticos, investigación científica y procesos altamente rutinarios. La clave en estas soluciones estribaba principalmente en la codificación matemático-formal de un conjunto de reglas que permitiera que una computadora realizara un conjunto de instrucciones (aún si ese conjunto es complejo). Dicho de otra forma, se resolvieron múltiples problemas intelectualmente difíciles para humanos pero sencillos para computadoras <span class="citation" data-cites="Goodfellow2016">(Goodfellow, Bengio, y Courville <a href="#ref-Goodfellow2016">2016</a>)</span>.</p>
+<p>Existen, por otra parte, muchos otros problemas que son <span class="smallcaps">(a)</span> aparentemente sencillos para un humano pero <span class="smallcaps">(b)</span> difíciles para una computadora.</p>
+<p>En cuanto a la primera parte de esa afirmación, es necesario señalar esa aparente sencillez [tk]</p>
+<h1 id="idea-básica-de-una-neurona">Idea básica de una neurona</h1>
+<p>La idea básica de lo que se conoce como “neurona” en el campo de las redes neuronales y el <em>Deep Learning</em> viene del trabajo del psicólogo estadounidense Frank Rosenblatt (1928–1971) en la década de 1950 <span class="citation" data-cites="Marcus2013">(Marcus <a href="#ref-Marcus2013">2013</a>)</span>, cuando desarrolló el <em>Perceptron</em>, una máquina anunciada como “capaz de aprender haciendo” <span class="citation" data-cites="s.a.1958">(<a href="#ref-s.a.1958">1958</a>)</span>. De cierta forma puede entenderse como una función que acepta varios datos de entrada <span class="math inline">\(x_1, x_2, \ldots\)</span> y produce un solo dato binario de salida.</p>
+<figure>
+<img src="img/perceptron.png" alt="Figura 1: Imagen ejemplo de un perceptron. Cortesía de Nielsen (2015)." id="fig:perceptron" /><figcaption><span>Figura 1:</span> Imagen ejemplo de un perceptron. Cortesía de <span class="citation" data-cites="Nielsen2015">Nielsen (<a href="#ref-Nielsen2015">2015</a>)</span>.</figcaption>
+</figure>
+<p>Se muestra en la figura figura <a href="#fig:perceptron">1</a> un ejemplo sencillo de perceptron con tres datos de entrada. El modelo de Rosenblatt puede resumirse en pocos hechos y pasos de cómputo:</p>
+<ul>
+<li>Cada dato de entrada <span class="math inline">\(x_j\)</span> es multiplicado por un valor “peso”, <span class="math inline">\(w_j\)</span> que representa la “importancia” relativa de dicho dato con respecto a los demás</li>
+<li>Se determina la suma ponderada de todos los datos de entrada, es decir <span class="math inline">\(\sum_j w_jx_j\)</span></li>
+<li>Se determina un valor umbral a forma de una regla de decisión para el valor binario del dato de salida. Esto es: <span class="math display">\[\text{salida} = \begin{cases}
+0 &amp; \text{si } \sum_j w_jx_j \leq \text{umbral}\\
+1 &amp; \text{si } \sum_j w_jx_j &gt; \text{umbral}
+\end{cases}\]</span></li>
+</ul>
+<p>En la literatura actual se suele resumir la notación anterior considerando a los pesos y los datos de entrada como vectores <span class="math inline">\(\vec{w}, \vec{x}\)</span> respectivamente, de forma que la suma ponderada se puede escribir e interpretar como un producto punto <span class="math inline">\(\vec{w} \cdot \vec{x}\)</span> y transferir el valor umbral del otro lado de la desigualdad, representándolo como un valor conocido como sesgo, <span class="math inline">\(b \equiv -\text{umbral}\)</span><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. De esta forma, la regla anterior se reescribe <span class="citation" data-cites="Nielsen2015">(Nielsen <a href="#ref-Nielsen2015">2015</a>, ch. 1)</span>:</p>
+<p><span id="eq:perceptron" style="display: inline-block; position: relative; width: 100%"><span class="math display">\[
+\text{salida} = \begin{cases}
+0 &amp; \text{si } w \cdot x + b \leq 0 \\
+1 &amp; \text{si } w \cdot x + b &gt; 0
+\end{cases}\]</span><span style="position: absolute; right: 0em; top: 50%; line-height:0; text-align: right">(1)</span></span></p>
+<p>Se ha demostrado <span class="citation" data-cites="Nielsen2015">(Nielsen <a href="#ref-Nielsen2015">2015</a>)</span> que un mecanismo de este tipo puede usarse como un análogo exacto de puertas lógicas y, por lo tanto, ser usadas para computación general.</p>
+<p>En la práctica, no se suelen usar estos “perceptrones” en modelos de aprendizaje por computadora principalmente por su rigidez en cuanto a datos de entrada y salida. A fin de poder ajustar un [tk]</p>
+<hr />
+<p><a href="index.html">Back to Index</a></p>
+<hr />
+<h1 id="referencias" class="unnumbered">Referencias</h1>
+<div id="refs" class="references">
+<div id="ref-Goodfellow2016">
+<p>Goodfellow, Ian, Yoshua Bengio, y Aaron Courville. 2016. <em>Deep Learning</em>. MIT Press.</p>
+</div>
+<div id="ref-Marcus2013">
+<p>Marcus, Gary. 2013. “Hyping Artificial Intelligence, Yet Again”. <em>The New Yorker</em>, diciembre.</p>
+</div>
+<div id="ref-Nielsen2015">
+<p>Nielsen, Michael A. 2015. <em>Neural Networks and Deep Learning</em>. Vol. 25. Determination Press. <a href="http://neuralnetworksanddeeplearning.com/index.html">http://neuralnetworksanddeeplearning.com/index.html</a>.</p>
+</div>
+<div id="ref-s.a.1958">
+<p>[s. a.]. 1958. “NEW NAVY DEVICE LEARNS BY DOING; Psychologist Shows Embryo of Computer Designed to Read and Grow Wiser”. <em>The New York Times</em>, julio.</p>
+</div>
+</div>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Por la palabra en inglés <em>bias</em><a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+            </div>
+    </div>
+  </div>
+</body>
+</html>
