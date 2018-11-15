@@ -93,27 +93,27 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
           <li class="nav-header">Contenidos</li>
         </ul>
         <ul>
-        <li><a href="#definiciones">Definiciones</a><ul>
-        <li><a href="#redes-convolucionales">Redes convolucionales</a></li>
-        <li><a href="#stochastic-gradient-descent">Stochastic Gradient Descent</a></li>
-        <li><a href="#stochastic-approximation">Stochastic approximation</a></li>
-        <li><a href="#gradient-descent">Gradient descent</a></li>
+        <li><a href="#definiciones"><span class="toc-section-number">1</span> Definiciones</a><ul>
+        <li><a href="#redes-convolucionales"><span class="toc-section-number">1.1</span> Redes convolucionales</a></li>
+        <li><a href="#stochastic-gradient-descent"><span class="toc-section-number">1.2</span> Stochastic Gradient Descent</a></li>
+        <li><a href="#stochastic-approximation"><span class="toc-section-number">1.3</span> Stochastic approximation</a></li>
+        <li><a href="#gradient-descent"><span class="toc-section-number">1.4</span> Gradient descent</a></li>
         </ul></li>
-        <li><a href="#estado-del-arte">Estado del arte</a><ul>
-        <li><a href="#comparación-de-fcn-rf-svm-dcnn-para-mapeo-de-humedales-basado-en-objetos">Comparación de FCN, RF, SVM, DCNN para mapeo de humedales basado en objetos</a></li>
-        <li><a href="#evaluación-de-extracción-de-datos-multi-vista-de-uas">Evaluación de extracción de datos multi-vista de UAS</a></li>
-        <li><a href="#un-tutorial-técnico-del-estado-del-arte-2016">Un tutorial técnico del estado del arte (2016)</a></li>
-        <li><a href="#transferencia-de-pre-entrenamiento">Transferencia de pre-entrenamiento</a></li>
-        <li><a href="#algoritmo-de-pre-entrenamiento">Algoritmo de pre-entrenamiento</a></li>
+        <li><a href="#estado-del-arte"><span class="toc-section-number">2</span> Estado del arte</a><ul>
+        <li><a href="#comparación-de-fcn-rf-svm-dcnn-para-mapeo-de-humedales-basado-en-objetos"><span class="toc-section-number">2.1</span> Comparación de FCN, RF, SVM, DCNN para mapeo de humedales basado en objetos</a></li>
+        <li><a href="#evaluación-de-extracción-de-datos-multi-vista-de-uas"><span class="toc-section-number">2.2</span> Evaluación de extracción de datos multi-vista de UAS</a></li>
+        <li><a href="#un-tutorial-técnico-del-estado-del-arte-2016"><span class="toc-section-number">2.3</span> Un tutorial técnico del estado del arte (2016)</a></li>
+        <li><a href="#transferencia-de-pre-entrenamiento"><span class="toc-section-number">2.4</span> Transferencia de pre-entrenamiento</a></li>
+        <li><a href="#algoritmo-de-pre-entrenamiento"><span class="toc-section-number">2.5</span> Algoritmo de pre-entrenamiento</a></li>
         </ul></li>
-        <li><a href="#otros-materiales-aún-sin-revisar">Otros materiales aún sin revisar</a></li>
+        <li><a href="#otros-materiales-aún-sin-revisar"><span class="toc-section-number">3</span> Otros materiales aún sin revisar</a></li>
         <li><a href="#referencias">Referencias</a></li>
         </ul>
         </div>
       </div>
             <div class="span9">
-            <h1 id="definiciones">Definiciones</h1>
-<h2 id="redes-convolucionales">Redes convolucionales</h2>
+            <h1 id="definiciones"><span class="header-section-number">1</span> Definiciones</h1>
+<h2 id="redes-convolucionales"><span class="header-section-number">1.1</span> Redes convolucionales</h2>
 <p>De acuerdo con <span class="citation" data-cites="LeCun2015">LeCun, Bengio, y Hinton (<a href="#ref-LeCun2015">2015</a>, 439)</span>:</p>
 <blockquote>
 <p>La arquitectura de una ConvNet típica está estructurada como una serie de niveles. Los primeros niveles están compuestos por dos tipos de capas: capas convolucionales y capas “pooling”.</p>
@@ -123,16 +123,16 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <blockquote>
 <p>Las redes neuranales profundas explotan la propiedad de que muchas señales naturales son herarquías de composición, en la que las características de alto nivel se obtienen mediante la composición de caracterísiticas en niveles menores. En las imágenes, las combinaciones locales de bordes forman motivos, los motivos se ensamblan en partes y las partes forman objetos… El agrupamiento perminte que las representaciones varíen muy poco cuando los elementos en la capa anterior varían en posición y apariencia.</p>
 </blockquote>
-<h2 id="stochastic-gradient-descent">Stochastic Gradient Descent</h2>
+<h2 id="stochastic-gradient-descent"><span class="header-section-number">1.2</span> Stochastic Gradient Descent</h2>
 <p><a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent">Wikipedia</a> sez: &gt; Stochastic gradient descent (often shortened to SGD), also known as <strong>incremental gradient descent</strong>, is an iterative method for optimizing a differentiable objective function, a stochastic approximation of gradient descent optimization.</p>
-<h2 id="stochastic-approximation">Stochastic approximation</h2>
+<h2 id="stochastic-approximation"><span class="header-section-number">1.3</span> Stochastic approximation</h2>
 <p><a href="https://en.wikipedia.org/wiki/Stochastic_approximation">Wikipedia</a> sez:</p>
 <blockquote>
 <p>Stochastic approximation algorithms are recursive update rules that can be used, among other things, to solve optimization problems and fixed point equations (including standard linear systems) when the collected data is subject to noise.</p>
 <p>For this purpose, you can do experiments or run simulations to evaluate the performance of the system at given values of the parameters.</p>
 <p>Stochastic approximation methods are a family of iterative stochastic optimization algorithms that attempt to find zeroes or extrema of functions which cannot be computed directly, but only estimated via noisy observations.</p>
 </blockquote>
-<h2 id="gradient-descent">Gradient descent</h2>
+<h2 id="gradient-descent"><span class="header-section-number">1.4</span> Gradient descent</h2>
 <p><a href="">Wikipedia</a> sez:</p>
 <blockquote>
 <p>Gradient descent is a first-order iterative optimization algorithm for finding the minimum of a function. To find a local minimum of a function using gradient descent, one takes steps proportional to the negative of the gradient (or approximate gradient) of the function at the current point. If, instead, one takes steps proportional to the positive of the gradient, one approaches a local maximum of that function; the procedure is then known as gradient ascent.</p>
@@ -157,33 +157,33 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <a class="sourceLine" id="wikipedia-implementation-17" title="17"></a>
 <a class="sourceLine" id="wikipedia-implementation-18" title="18"><span class="bu">print</span>(<span class="st">&quot;The local minimum occurs at&quot;</span>, cur_x)</a>
 <a class="sourceLine" id="wikipedia-implementation-19" title="19"><span class="co">#The output for the above will be: (&#39;The local minimum occurs at&#39;, 2.2499646074278457)</span></a></code></pre></div>
-<h1 id="estado-del-arte">Estado del arte</h1>
-<h2 id="comparación-de-fcn-rf-svm-dcnn-para-mapeo-de-humedales-basado-en-objetos">Comparación de FCN, RF, SVM, DCNN para mapeo de humedales basado en objetos</h2>
+<h1 id="estado-del-arte"><span class="header-section-number">2</span> Estado del arte</h1>
+<h2 id="comparación-de-fcn-rf-svm-dcnn-para-mapeo-de-humedales-basado-en-objetos"><span class="header-section-number">2.1</span> Comparación de FCN, RF, SVM, DCNN para mapeo de humedales basado en objetos</h2>
 <p>En “Comparing fully convolutional networks, random forest, support vector machine, and patch-based deep convolutional neural networks for object-based wetland mapping using images from small unmanned aircraft system” <span class="citation" data-cites="Liu2018a">(Liu, Abd-Elrahman, Morton, et al. <a href="#ref-Liu2018a">2018</a>)</span></p>
 <blockquote>
 <p>In this study, two representatives of deep learning networks including fully convolutional networks (FCN) and patch-based deep convolutional neural networks (DCNN), and two conventional classifiers including random forest and support vector machine were implemented within the framework of OBIA to classify seven natural land cover types.</p>
 <p>Our results indicate that DCNN may produce inferior performance compared to conventional classifiers when the training sample size is small, but it tends to show substantially higher accuracy than the conventional classifiers when the training sample size becomes large.</p>
 </blockquote>
-<h2 id="evaluación-de-extracción-de-datos-multi-vista-de-uas">Evaluación de extracción de datos multi-vista de UAS</h2>
+<h2 id="evaluación-de-extracción-de-datos-multi-vista-de-uas"><span class="header-section-number">2.2</span> Evaluación de extracción de datos multi-vista de UAS</h2>
 <p>En “Evaluating the potential of multi-view data extraction from small Unmanned Aerial Systems (UASs) for object-based classification for Wetland land covers” <span class="citation" data-cites="Liu2018b">(Liu, Abd-Elrahman, Dewitt, et al. <a href="#ref-Liu2018b">2018</a>)</span></p>
 <blockquote>
 <p>This study presents a method that combines collinearity equations and a two-phase optimization procedure to automatically project a point from real world coordinate system of an orthoimage to UAS image coordinate system (row and column numbers) to be used in multi-view data extraction. The results show average errors for the computed UAS column and row numbers were 1.6 and 1.8 pixels respectively evaluated with leave-one-out method.</p>
 </blockquote>
-<h2 id="un-tutorial-técnico-del-estado-del-arte-2016">Un tutorial técnico del estado del arte (2016)</h2>
+<h2 id="un-tutorial-técnico-del-estado-del-arte-2016"><span class="header-section-number">2.3</span> Un tutorial técnico del estado del arte (2016)</h2>
 <p>En “Deep Learning for Remote Sensing Data: A Technical Tutorial on the State of the Art”<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> <span class="citation" data-cites="Zhang2016">(Zhang, Zhang, y Du <a href="#ref-Zhang2016">2016</a>)</span></p>
-<h2 id="transferencia-de-pre-entrenamiento">Transferencia de pre-entrenamiento</h2>
+<h2 id="transferencia-de-pre-entrenamiento"><span class="header-section-number">2.4</span> Transferencia de pre-entrenamiento</h2>
 <p>En “Transferring Deep Convolutional Neural Networks for the Scene Classification of High-Resolution Remote Sensing Imagery” <span class="citation" data-cites="Hu2015">(Hu et al. <a href="#ref-Hu2015">2015</a>)</span></p>
 <blockquote>
 <p>In this paper, we investigate how to transfer features from these successfully pre-trained CNNs for HRRS scene classification.</p>
 <p>The results reveal that the features from pre-trained CNNs generalize well to HRRS datasets and are more expressive than the low- and mid-level features. Moreover, we tentatively combine features extracted from different CNN models for better performance.</p>
 </blockquote>
-<h2 id="algoritmo-de-pre-entrenamiento">Algoritmo de pre-entrenamiento</h2>
+<h2 id="algoritmo-de-pre-entrenamiento"><span class="header-section-number">2.5</span> Algoritmo de pre-entrenamiento</h2>
 <p>En “Unsupervised Deep Feature Extraction for Remote Sensing Image Classification”<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> <span class="citation" data-cites="Romero2016">(Romero, Gatta, y Camps-Valls <a href="#ref-Romero2016">2016</a>)</span></p>
 <blockquote>
 <p>we propose the use of greedy layerwise unsupervised pretraining coupled with a highly efficient algorithm for unsupervised learning of sparse features.</p>
 <p>The proposed algorithm clearly outperforms standard principal component analysis (PCA) and its kernel counterpart (kPCA), as well as current state-of-the-art algorithms of aerial classification, while being extremely computationally efficient at learning representations of data. Results show that single-layer convolutional networks can extract powerful discriminative features only when the receptive field accounts for neighboring pixels and are preferred when the classification requires high resolution and detailed results. However, deep architectures significantly outperform single-layer variants, capturing increasing levels of abstraction and complexity throughout the feature hierarchy.</p>
 </blockquote>
-<h1 id="otros-materiales-aún-sin-revisar">Otros materiales aún sin revisar</h1>
+<h1 id="otros-materiales-aún-sin-revisar"><span class="header-section-number">3</span> Otros materiales aún sin revisar</h1>
 <ul>
 <li><span class="citation" data-cites="Chen2014">Chen et al. (<a href="#ref-Chen2014">2014</a>)</span></li>
 <li><span class="citation" data-cites="Hinton2006">Hinton, Osindero, y Teh (<a href="#ref-Hinton2006">2006</a>)</span></li>
