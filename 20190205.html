@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es-MX" xml:lang="es-MX">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Andy Cyca" />
+  <meta name="date" content="2019-02-05" />
+  <title>Selecting the best model (excerpt)</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="template.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+    <div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <span class="doc-title">Selecting the best model (excerpt)</span>
+        <ul class="nav pull-right doc-info">
+                    <li><p class="navbar-text">Andy Cyca</p></li>
+                              <li><p class="navbar-text">2019-02-05</p></li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+    <div class="row">
+            <div id="TOC" class="span3">
+        <div class="well toc">
+        <ul>
+          <li class="nav-header">Contenidos</li>
+        </ul>
+        <ul>
+        <li><a href="#selecting-the-best-model"><span class="toc-section-number">1</span> Selecting the best model</a><ul>
+        <li><a href="#reference-for-this-page"><span class="toc-section-number">1.1</span> Reference for this page</a></li>
+        </ul></li>
+        <li><a href="#referencias">Referencias</a></li>
+        </ul>
+        </div>
+      </div>
+            <div class="span9">
+            <h1 id="selecting-the-best-model"><span class="header-section-number">1</span> Selecting the best model</h1>
+<p>When a model is under-performing, it is often not clear how to make it better. Throughout this book, I have declared several decisions a secret of the trade, for example, how to select the number of layers in a neural network. Even worse, the answer is often counter intuitive! For example, adding another layer to the network might make the results worse, and adding more training data might not change performance at all.</p>
+<p>You can see why these issues are some of the most important aspects of machine learning. At the end of the day, the ability to determine what steps will or will not improve our model is what separates the successful machine learning practitioner from all others.</p>
+<p>Let’s have a look at a specific example. Remember Chapter 5, Using Decision Trees to Make a Medical Diagnosis, where we used decision trees in a regression task? We were fitting two different trees to a sin function–one with depth 2 and one with depth 5. As a reminder, the regression result looked like this:</p>
+<figure>
+<img src="img/decisiontrees.png" alt="Figura 1: Approximating a sin function using decision trees" id="fig:decisiontrees" /><figcaption><span>Figura 1:</span> Approximating a sin function using decision trees</figcaption>
+</figure>
+<p>It should be clear that neither of these fits are particularly good. However, the two decision trees fail in two different ways!</p>
+<p>The decision tree with depth 2 (thick line in the preceding figure) attempts to fit four straight lines through the data. Because the data is intrinsically more complicated than a few straight lines, this model fails. We could train it as much as we wanted, on as many training samples as we could generate–it would never be able to describe this dataset well. Such a model is said to underfit the data. In other words, the model does not have enough flexibility to account for all the features in the data. Another way of saying this is that the model has high bias.</p>
+<p>The other decision tree (thin line, depth 5) makes a different mistake. This model has enough flexibility to nearly perfectly account for the fine structures in the data. However, at some points, the model seems to follow the particular pattern of the noise; we added to the sin function rather than the sin function itself. You can see that on the right-hand side of the graph, where the blue curve (thin line) would jitter a lot. Such a model is said to overfit the data. In other words, the model has so much flexibility that it ends up accounting for random errors in the data. Another way of saying this is that model has high variance.</p>
+<p>To give you a long story short–here’s the secret sauce: Fundamentally, selecting the right model comes down to finding a sweet spot in the trade-off between bias and variance.</p>
+<blockquote>
+<p>The amount of flexibility a model has (also known as the model complexity) is mostly dictated by its hyperparameters. That is why it is so important to tune them!</p>
+</blockquote>
+<p>Let’s return to the k-NN algorithm and the Iris dataset. If we repeated the procedure of fitting the model to the Iris data for all possible values of k and calculated both training and test scores, we would expect the result to look something like the following:</p>
+<figure>
+<img src="img/modelcomplexity.png" alt="Figura 2: Model score as a function of model complexity" id="fig:modelcomplexity" /><figcaption><span>Figura 2:</span> Model score as a function of model complexity</figcaption>
+</figure>
+<p>If there is one thing I would want you to remember from this chapter, it would be this diagram (fig:modelcomplexity). Let’s unpack it.</p>
+<p>The diagram describes the model score (either training or test score) as a function of model complexity. As mentioned in the preceding diagram, the model complexity of a neural network roughly grows with the number of neurons in the network. In the case of k-NN, the opposite logic applies–the larger the value for k, the smoother the decision boundary, and thus, the lower the complexity. In other words, k-NN with k=1 would be all the way to the right in the preceding diagram, where the training score is perfect. No wonder we got 100% accuracy on the training set!</p>
+<p>From the preceding diagram, we can gather that there are three regimes in the model complexity landscape:</p>
+<p>For very low model complexity (a high-bias model), the training data is underfit. In this regime, the model achieves only low scores on both the training and test set, no matter for how long we trained it. For very high model complexity (a high-variance model), the training data is overfit, which means that the model predicts the training data very well but fails for any previously unseen data. In this regime, the model has started to learn intricacies or peculiarities that only appear in the training data. Since these peculiarities do not apply to unseen data, the training score gets lower and lower. For some intermediate value, the test score is maximal. It is this intermediate regime, where the test score is maximal, that we are trying to find. This is the sweet spot in the trade-off between bias and variance! This means that we can find the best algorithm for the task at hand by mapping out the model complexity landscape. Specifically, we can use the following indicators to know which regime we are currently in:</p>
+<p>If both training and test scores are below our expectations, we are probably in the leftmost regime in the preceding diagram, where the model is underfitting the data. In this case, a good idea might be to increase the model complexity and try again. If the training score is much higher than the test score, we are probably in the rightmost regime in the preceding diagram, where model is overfitting the data. In this case, a good idea might be to decrease the model complexity and try again. Although this procedure works in general, there are more sophisticated strategies for model evaluation that proved to be more thorough than a simple train-test split, which we will talk about in the following sections.</p>
+<h2 id="reference-for-this-page"><span class="header-section-number">1.1</span> Reference for this page</h2>
+<p>See: <span class="citation" data-cites="Beyeler2017">Beyeler (<a href="#ref-Beyeler2017">2017</a>)</span></p>
+<hr />
+<p><span class="math inline">\(\leftarrow\)</span><a href="20181114.html">Un poco de justificación e historia</a></p>
+<p><a href="index.html">Back to Index</a></p>
+<p>(last) <span class="math inline">\(\rightarrow\)</span></p>
+<hr />
+<h1 id="referencias" class="unnumbered">Referencias</h1>
+<div id="refs" class="references">
+<div id="ref-Beyeler2017">
+<p>Beyeler, Michael. 2017. <em>Machine Learning for OpenCV: Intelligent image processing with Python</em>. Packt Publishing - ebooks Account. <a href="https://www.amazon.com/Machine-Learning-OpenCV-Intelligent-processing/dp/1783980281?SubscriptionId=AKIAIOBINVZYXZQZ2U3A&amp;tag=chimbori05-20&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=1783980281">https://www.amazon.com/Machine-Learning-OpenCV-Intelligent-processing/dp/1783980281?SubscriptionId=AKIAIOBINVZYXZQZ2U3A&amp;tag=chimbori05-20&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=1783980281</a>.</p>
+</div>
+</div>
+            </div>
+    </div>
+  </div>
+</body>
+</html>
