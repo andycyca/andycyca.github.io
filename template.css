@@ -772,12 +772,12 @@ blockquote {
 }
 blockquote p {
   margin-bottom: 0;
-  font-size: 80%; /*was 17.5px;*/
+  font-size: 100%; /*was 17.5px;*/
   font-weight: 300;
   line-height: 1.25;
   background-color: #bbb; /*was empty*/
-  border: 5px solid #aaa; /*was empty*/
-  border-radius: 5px;
+  /*border: 5px solid #aaa;*/ /*was empty*/
+  /*border-radius: 5px;*/
 }
 blockquote small {
   display: block;
