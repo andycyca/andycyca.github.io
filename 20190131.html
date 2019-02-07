@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es-MX" xml:lang="es-MX">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Andy Cyca" />
+  <meta name="date" content="2019-01-31" />
+  <title>Sobre bagging y boosting</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="template.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+    <div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <span class="doc-title">Sobre bagging y boosting</span>
+        <ul class="nav pull-right doc-info">
+                    <li><p class="navbar-text">Andy Cyca</p></li>
+                              <li><p class="navbar-text">2019-01-31</p></li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+    <div class="row">
+            <div id="TOC" class="span3">
+        <div class="well toc">
+        <ul>
+          <li class="nav-header">Contenidos</li>
+        </ul>
+        <ul>
+        <li><a href="#qué-son-bagging-y-boosting"><span class="toc-section-number">1</span> ¿Qué son «bagging» y «boosting»?</a></li>
+        <li><a href="#referencias">Referencias</a></li>
+        </ul>
+        </div>
+      </div>
+            <div class="span9">
+            <h1 id="qué-son-bagging-y-boosting"><span class="header-section-number">1</span> ¿Qué son «bagging» y «boosting»?</h1>
+<p>Dicen <span class="citation" data-cites="Opitz1999">Opitz y Maclin (<a href="#ref-Opitz1999">1999</a>)</span>:</p>
+<blockquote>
+<p>An <strong>ensemble</strong> consists of a set of individually trained classifiers (such as neural networks or decision trees) whose predictions are combined when classifying novel instances. Previous research has shown that an ensemble is often more accurate than any of the single classifiers in the ensemble. <strong>Bagging</strong> and <strong>Boosting</strong> are two relatively new but popular methods for producing ensembles. In this paper we evaluate these methods on 23 data sets using both neural networks and decision trees as our classification algorithm. Our results clearly indicate a number of conclusions. First, <em>while Bagging is almost always more accurate than a single classifier, it is sometimes much less accurate than Boosting</em>. On the other hand, <em>Boosting can create ensembles that are less accurate than a single classifier</em> - especially when using neural networks. Analysis indicates that the performance of the Boosting methods is dependent on the characteristics of the data set being examined. In fact, further results show that Boosting ensembles may overfit noisy data sets, thus decreasing its performance. Finally, consistent with previous studies, our work suggests that most of the gain in an ensemble’s performance comes in the first few classifiers combined; however, relatively large gains can be seen up to 25 classifiers when Boosting decision trees.</p>
+</blockquote>
+<hr />
+<p><span class="math inline">\(\leftarrow\)</span><a href="20181114.html">Un poco de justificación e historia</a></p>
+<p><a href="index.html">Back to Index</a></p>
+<p><a href="20190205.html">Selecting the best model (excerpt)</a> <span class="math inline">\(\rightarrow\)</span></p>
+<hr />
+<h1 id="referencias" class="unnumbered">Referencias</h1>
+<div id="refs" class="references">
+<div id="ref-Opitz1999">
+<p>Opitz, D., y R. Maclin. 1999. “Popular Ensemble Methods: An Empirical Study”. <em>Journal of Artificial Intelligence Research</em> 11 (agosto): 169–98. <a href="https://doi.org/10.1613/jair.614">https://doi.org/10.1613/jair.614</a>.</p>
+</div>
+</div>
+            </div>
+    </div>
+  </div>
+</body>
+</html>
