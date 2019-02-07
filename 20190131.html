@@ -31,14 +31,43 @@
           <li class="nav-header">Contenidos</li>
         </ul>
         <ul>
-        <li><a href="#qué-son-bagging-y-boosting"><span class="toc-section-number">1</span> ¿Qué son «bagging» y «boosting»?</a></li>
+        <li><a href="#métodos-de-ensamble"><span class="toc-section-number">1</span> Métodos de ensamble</a></li>
+        <li><a href="#qué-son-bagging-y-boosting"><span class="toc-section-number">2</span> ¿Qué son «bagging» y «boosting»?</a></li>
         <li><a href="#referencias">Referencias</a></li>
         </ul>
         </div>
       </div>
             <div class="span9">
-            <h1 id="qué-son-bagging-y-boosting"><span class="header-section-number">1</span> ¿Qué son «bagging» y «boosting»?</h1>
-<p>Dicen <span class="citation" data-cites="Opitz1999">Opitz y Maclin (<a href="#ref-Opitz1999">1999</a>)</span>:</p>
+            <h1 id="métodos-de-ensamble"><span class="header-section-number">1</span> Métodos de ensamble</h1>
+<p>Dados varios clasificadores distintos entre sí, es posible preguntarse si es posible usar uno u otro de ellos. Incluso puede surgir la duda legítima de si es posible aprender de todos ellos, usándolos como un conjunto. Esta idea no es única al campo de <em>machine learning</em>, sino que proviene de la tendencia humana de buscar segundas y terceras opiniones en asuntos de gran importancia. Al conocer y sopesar distintas opiniones individuales, se pueden combinar de alguna manera para alcanzar una decisión final que, se espera, sea la mejor informada de todas <span class="citation" data-cites="Polikar2006">(Polikar <a href="#ref-Polikar2006">2006</a>)</span>.</p>
+<p>En general, esta estrategia aplicada al campo de <em>machine learning</em> se conoce con el nombre de <strong>metodologías de ensamble o ensamblaje</strong>.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> En términos muy generales, es posible promediar los resultados de varios clasificadores distintos para obtener un resultado que es generalmente mejor (o con mayor poder predictivo que) cada clasificador individual.</p>
+<p>Se ha demostrado <span class="citation" data-cites="Rokach2009">(Rokach <a href="#ref-Rokach2009">2009</a>)</span> que la metodología de ensamblaje puede mejorar significativamente el poder predictivo de los clasificadores individuales, aún si estos se juzgan «débiles».<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Los principios teóricos de esta idea provienen del <em>teorema del jurado de Condorcet</em> en una de sus versiones más simples:</p>
+<blockquote>
+<p>El teorema se refiere a un jurado de votantes que deben tomar una decisión acerca de un resultado binario (por ejemplo, declarar culpable o no culpable a un acusado). Si cada votante tiene una probabilidad <span class="math inline">\(p\)</span> de estar en lo correcto y la probabilidad de que una mayoría de votantes estén en lo correcto sea <span class="math inline">\(L\)</span>, entonces <span class="citation" data-cites="Rokach2009">(Rokach <a href="#ref-Rokach2009">2009</a>, 2)</span>:</p>
+<ul>
+<li><span class="math inline">\(p &gt; 0.5\)</span> implica que <span class="math inline">\(L &gt; p\)</span></li>
+<li>También <span class="math inline">\(L\)</span> se aproxima a 1, para todo <span class="math inline">\(p&gt;0.5\)</span> mientras el número de votantes se aproxima al infinito</li>
+</ul>
+<p>Este teorema tiene dos grandes limitantes: la suposición de que los votos son independientes uno del otro; y que sólo hay dos posibles resultados. Aún así, si estas dos condiciones previas se cumplen, entonces se puede alcanzar una decisión «correcta» simplemente mediante la combinación de los votos de un jurado suficientemente grande de votantes cuyos juicios sean ligeramente mejores que un voto al azar.</p>
+</blockquote>
+<p>(…)</p>
+<p>Sugiere <span class="citation" data-cites="Surowiecki2005">Surowiecki (<a href="#ref-Surowiecki2005">2005</a>)</span> que un grupo<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> sólo puede alcanzar la sabiduría si se cumplen los siguientes criterios <span class="citation" data-cites="Rokach2009">(cita de Rokach <a href="#ref-Rokach2009">2009</a>)</span>:</p>
+<dl>
+<dt>Diversidad de opinión</dt>
+<dd>Cada individuo debería tener información privada aún si es solamente una interpretación excéntrica de los hechos conocidos
+</dd>
+<dt>Independencia</dt>
+<dd>Las opiniones de los individuos no están determinadas por las opiniones de quienes les rodean
+</dd>
+<dt>Decentralización</dt>
+<dd>Los individuos son capaces de especializarse y llegar a conclusiones basadas en conocimiento «local»
+</dd>
+<dt>Agregación</dt>
+<dd>Existe algún mecanismo para convertir los juicios privados en una decisión colectiva.
+</dd>
+</dl>
+<h1 id="qué-son-bagging-y-boosting"><span class="header-section-number">2</span> ¿Qué son «bagging» y «boosting»?</h1>
+<p>Según <span class="citation" data-cites="Opitz1999">Opitz y Maclin (<a href="#ref-Opitz1999">1999</a>)</span>:</p>
 <blockquote>
 <p>An <strong>ensemble</strong> consists of a set of individually trained classifiers (such as neural networks or decision trees) whose predictions are combined when classifying novel instances. Previous research has shown that an ensemble is often more accurate than any of the single classifiers in the ensemble. <strong>Bagging</strong> and <strong>Boosting</strong> are two relatively new but popular methods for producing ensembles. In this paper we evaluate these methods on 23 data sets using both neural networks and decision trees as our classification algorithm. Our results clearly indicate a number of conclusions. First, <em>while Bagging is almost always more accurate than a single classifier, it is sometimes much less accurate than Boosting</em>. On the other hand, <em>Boosting can create ensembles that are less accurate than a single classifier</em> - especially when using neural networks. Analysis indicates that the performance of the Boosting methods is dependent on the characteristics of the data set being examined. In fact, further results show that Boosting ensembles may overfit noisy data sets, thus decreasing its performance. Finally, consistent with previous studies, our work suggests that most of the gain in an ensemble’s performance comes in the first few classifiers combined; however, relatively large gains can be seen up to 25 classifiers when Boosting decision trees.</p>
 </blockquote>
@@ -52,7 +81,27 @@
 <div id="ref-Opitz1999">
 <p>Opitz, D., y R. Maclin. 1999. “Popular Ensemble Methods: An Empirical Study”. <em>Journal of Artificial Intelligence Research</em> 11 (agosto): 169–98. <a href="https://doi.org/10.1613/jair.614">https://doi.org/10.1613/jair.614</a>.</p>
 </div>
+<div id="ref-Polikar2006">
+<p>Polikar, R. 2006. “Ensemble based systems in decision making”. <em>IEEE Circuits and Systems Magazine</em> 6 (3): 21–45. <a href="https://doi.org/10.1109/mcas.2006.1688199">https://doi.org/10.1109/mcas.2006.1688199</a>.</p>
 </div>
+<div id="ref-Rokach2009">
+<p>Rokach, Lior. 2009. “Ensemble-based classifiers”. <em>Artificial Intelligence Review</em> 33 (1-2): 1–39. <a href="https://doi.org/10.1007/s10462-009-9124-7">https://doi.org/10.1007/s10462-009-9124-7</a>.</p>
+</div>
+<div id="ref-Schapire1990">
+<p>Schapire, Robert E. 1990. “The strength of weak learnability”. <em>Machine Learning</em> 5 (2): 197–227. <a href="https://doi.org/10.1007/bf00116037">https://doi.org/10.1007/bf00116037</a>.</p>
+</div>
+<div id="ref-Surowiecki2005">
+<p>Surowiecki, James. 2005. <em>The Wisdom of Crowds</em>. Random House LCC US. <a href="https://www.ebook.de/de/product/3156445/james_surowiecki_the_wisdom_of_crowds.html">https://www.ebook.de/de/product/3156445/james_surowiecki_the_wisdom_of_crowds.html</a>.</p>
+</div>
+</div>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>O más comúnmente en inglés: <em>ensemble</em><a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>La terminología está adaptada de <span class="citation" data-cites="Schapire1990">Schapire (<a href="#ref-Schapire1990">1990</a>)</span><a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>O «muchedumbre», que quizá sea más adecuado en este caso<a href="#fnref3" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
             </div>
     </div>
   </div>
