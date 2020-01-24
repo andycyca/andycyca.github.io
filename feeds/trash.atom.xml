@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Cantar del Cid Robot</title><link href="https://andycyca.github.io/" rel="alternate"></link><link href="https://andycyca.github.io/feeds/all.atom.xml" rel="self"></link><id>https://andycyca.github.io/</id><updated>2020-01-24T00:00:00-06:00</updated><entry><title>Yet another title here</title><link href="https://andycyca.github.io/yet-another-title-here-en.html" rel="alternate"></link><published>2020-01-24T00:00:00-06:00</published><updated>2020-01-24T00:00:00-06:00</updated><author><name>Andycyca</name></author><id>tag:andycyca.github.io,2020-01-24:/yet-another-title-here-en.html</id><summary type="html">&lt;p&gt;This is another test. Brace yourselves.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cantar del Cid Robot - Trash</title><link href="https://andycyca.github.io/" rel="alternate"></link><link href="https://andycyca.github.io/feeds/trash.atom.xml" rel="self"></link><id>https://andycyca.github.io/</id><updated>2020-01-24T00:00:00-06:00</updated><entry><title>Yet another title here</title><link href="https://andycyca.github.io/yet-another-title-here-en.html" rel="alternate"></link><published>2020-01-24T00:00:00-06:00</published><updated>2020-01-24T00:00:00-06:00</updated><author><name>Andycyca</name></author><id>tag:andycyca.github.io,2020-01-24:/yet-another-title-here-en.html</id><summary type="html">&lt;p&gt;This is another test. Brace yourselves.&lt;/p&gt;
 &lt;figure&gt;
 &lt;img src="img/Jq3k90F.jpg" id="fig:waitwhat" alt="" /&gt;&lt;figcaption&gt;&lt;span&gt;Figure 1:&lt;/span&gt; Wait what&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -105,79 +105,6 @@ e = \int_{n = 1}^{\infty}\frac{1}{n!}
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;Esperemos…&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn2" role="doc-endnote"&gt;&lt;p&gt;“Multi-View Learning Overview.”&lt;a href="#fnref2" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn3" role="doc-endnote"&gt;&lt;p&gt;“Unmanned Aerial Systems for Photogrammetry and Remote Sensing.”&lt;a href="#fnref3" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-</content><category term="Trash"></category><category term="python"></category><category term="github"></category></entry><entry><title>First post</title><link href="https://andycyca.github.io/first-post-en.html" rel="alternate"></link><published>2020-01-23T00:00:00-06:00</published><updated>2020-01-23T00:00:00-06:00</updated><author><name>Andycyca</name></author><id>tag:andycyca.github.io,2020-01-23:/first-post-en.html</id><summary type="html">&lt;h1 id="first-post-via-pelican"&gt;First post via Pelican&lt;/h1&gt;
-&lt;p&gt;Theoretically, this should produce a valid HTML page.&lt;a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; This should produce—one would hope—smartypants “effects”…&lt;/p&gt;
-&lt;h2 id="wishlist"&gt;Wishlist&lt;/h2&gt;
-&lt;p&gt;I would like for it to have:&lt;/p&gt;
-&lt;dl&gt;
-&lt;dt&gt;Mathematics&lt;/dt&gt;
-&lt;dd&gt;Good mathematical support
-&lt;/dd&gt;
-&lt;dt&gt;Typography&lt;/dt&gt;
-&lt;dd&gt;Beautifully-rendered typography.
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;h2 id="lists"&gt;Lists&lt;/h2&gt;
-&lt;p&gt;On the other hand, we can have:&lt;/p&gt;
-&lt;ol start="4" type="1"&gt;
-&lt;li&gt;a list&lt;/li&gt;
-&lt;li&gt;of&lt;/li&gt;
-&lt;li&gt;different lists&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id="images"&gt;Images …&lt;/h2&gt;</summary><content type="html">&lt;h1 id="first-post-via-pelican"&gt;First post via Pelican&lt;/h1&gt;
-&lt;p&gt;Theoretically, this should produce a valid HTML page.&lt;a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; This should produce—one would hope—smartypants “effects”…&lt;/p&gt;
-&lt;h2 id="wishlist"&gt;Wishlist&lt;/h2&gt;
-&lt;p&gt;I would like for it to have:&lt;/p&gt;
-&lt;dl&gt;
-&lt;dt&gt;Mathematics&lt;/dt&gt;
-&lt;dd&gt;Good mathematical support
-&lt;/dd&gt;
-&lt;dt&gt;Typography&lt;/dt&gt;
-&lt;dd&gt;Beautifully-rendered typography.
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;h2 id="lists"&gt;Lists&lt;/h2&gt;
-&lt;p&gt;On the other hand, we can have:&lt;/p&gt;
-&lt;ol start="4" type="1"&gt;
-&lt;li&gt;a list&lt;/li&gt;
-&lt;li&gt;of&lt;/li&gt;
-&lt;li&gt;different lists&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id="images"&gt;Images&lt;/h2&gt;
-&lt;p&gt;i can haz image?&lt;/p&gt;
-&lt;figure&gt;
-&lt;img src="img/oolong.jpg" alt="" /&gt;&lt;figcaption&gt;Oolong the Rabbit&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;After the figure, an equation, by &lt;span class="citation" data-cites="Zhao2017"&gt;Zhao et al.&lt;a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span id="eq:one" style="display: inline-block; position: relative; width: 100%"&gt;&lt;math display="block" xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msubsup&gt;&lt;mo&gt;∫&lt;/mo&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;mi&gt;∞&lt;/mi&gt;&lt;/msubsup&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;!&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding="application/x-tex"&gt;
-e = \int_{n = 1}^{\infty}\frac{1}{n!}
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;span style="position: absolute; right: 0em; top: 50%; line-height:0; text-align: right"&gt;(1)&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;h2 id="syntax-highlighting"&gt;Syntax highlighting&lt;/h2&gt;
-&lt;p&gt;Will this work? See equation &lt;a href="#eq:one"&gt;1&lt;/a&gt;&lt;/p&gt;
-&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode python"&gt;&lt;code class="sourceCode python"&gt;&lt;span id="cb1-1"&gt;&lt;a href="#cb1-1"&gt;&lt;/a&gt;&lt;span class="im"&gt;import&lt;/span&gt; numpy &lt;span class="im"&gt;as&lt;/span&gt; np&lt;/span&gt;
-&lt;span id="cb1-2"&gt;&lt;a href="#cb1-2"&gt;&lt;/a&gt;x &lt;span class="op"&gt;=&lt;/span&gt; np.linspace(&lt;span class="dv"&gt;1&lt;/span&gt;, &lt;span class="dv"&gt;10&lt;/span&gt;, &lt;span class="dv"&gt;100&lt;/span&gt;)&lt;/span&gt;
-&lt;span id="cb1-3"&gt;&lt;a href="#cb1-3"&gt;&lt;/a&gt;y &lt;span class="op"&gt;=&lt;/span&gt; np.sin(x)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="citation-rendering"&gt;Citation rendering&lt;/h2&gt;
-&lt;p&gt;See &lt;span class="citation" data-cites="Zhao2017"&gt;Zhao et al.&lt;/span&gt; and &lt;span class="citation" data-cites="Colomina2014"&gt;Colomina and Molina.&lt;a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;h2 id="anything-else"&gt;Anything else?&lt;/h2&gt;
-&lt;p&gt;I think not &lt;em&gt;poof&lt;/em&gt;&lt;/p&gt;
-&lt;h1 id="references" class="unnumbered"&gt;References&lt;/h1&gt;
-&lt;div id="refs" class="references" role="doc-bibliography"&gt;
-&lt;div id="ref-Colomina2014"&gt;
-&lt;p&gt;Colomina, I., and P. Molina. “Unmanned Aerial Systems for Photogrammetry and Remote Sensing: A Review.” &lt;em&gt;ISPRS Journal of Photogrammetry and Remote Sensing&lt;/em&gt; 92 (June 2014): 79–97. &lt;a href="https://doi.org/10.1016/j.isprsjprs.2014.02.013"&gt;https://doi.org/10.1016/j.isprsjprs.2014.02.013&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id="ref-Zhao2017"&gt;
-&lt;p&gt;Zhao, Jing, Xijiong Xie, Xin Xu, and Shiliang Sun. “Multi-View Learning Overview: Recent Progress and New Challenges.” &lt;em&gt;Information Fusion&lt;/em&gt; 38 (November 2017): 43–54. &lt;a href="https://doi.org/10.1016/j.inffus.2017.02.007"&gt;https://doi.org/10.1016/j.inffus.2017.02.007&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;section class="footnotes" role="doc-endnotes"&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;Hopefully…&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li id="fn2" role="doc-endnote"&gt;&lt;p&gt;“Multi-View Learning Overview.”&lt;a href="#fnref2" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li id="fn3" role="doc-endnote"&gt;&lt;p&gt;“Unmanned Aerial Systems for Photogrammetry and Remote Sensing.”&lt;a href="#fnref3" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
